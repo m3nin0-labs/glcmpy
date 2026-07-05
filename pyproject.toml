@@ -1,0 +1,74 @@
+[build-system]
+requires = ["scikit-build-core>=0.10", "nanobind>=2.0"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "glcmpy"
+version = "0.1.0"
+description = "GLCM texture measures"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+    { name = "Felipe Carlos", email = "efelipecarlos@gmail.com" },
+]
+keywords = ["glcm", "haralick", "texture", "remote-sensing", "image-processing"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: C++",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Intended Audience :: Science/Research",
+]
+dependencies = ["numpy>=1.23"]
+
+[project.optional-dependencies]
+xarray = ["xarray>=2024.7.0"]
+
+[project.urls]
+Homepage = "https://github.com/m3nin0-labs/glcmpy"
+Source = "https://github.com/m3nin0-labs/glcmpy"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "jupytext>=1.19.4",
+    "pdoc>=14.0",
+    "xarray>=2024.7.0",
+]
+examples = ["xarray>=2024.7.0", "matplotlib>=3.8"]
+
+[tool.scikit-build]
+minimum-version = "0.10"
+build-dir = "build/{wheel_tag}"
+wheel.py-api = "cp312"
+
+[tool.scikit-build.cmake]
+version = ">=3.18"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.format]
+indent-style = "tab"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E101"]  # tab indent + space-aligned docstring continuations
+
+[tool.ruff.lint.per-file-ignores]
+"examples/*" = ["B018"]  # bare expressions render as notebook cell output
+
+[tool.mypy]
+python_version = "3.12"
+disallow_untyped_defs = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["glcmpy._glcm", "xarray"]
+ignore_missing_imports = true

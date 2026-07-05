@@ -1,0 +1,21 @@
+# Formatting rules for the twdtw C++ core
+---
+Language: Cpp
+BasedOnStyle: Google
+Standard: c++17
+
+ColumnLimit: 100
+IndentWidth: 4
+AccessModifierOffset: -3
+
+# Always brace control-flow bodies (clang-format >= 15).
+InsertBraces: true
+
+# Never collapse a guard or loop onto one line.
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortBlocksOnASingleLine: Empty
+
+DerivePointerAlignment: false
+PointerAlignment: Right
