@@ -21,6 +21,7 @@ import glcmpy
 # Constants
 #
 ROOT_DIR = Path(__file__).resolve().parent.parent
+
 OUTPUT_DIR = ROOT_DIR / "site"
 
 
