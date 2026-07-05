@@ -1,6 +1,6 @@
 # glcmpy
 
-GLCM (Grey-Level Co-occurrence Matrix) Haralick texture measures in Python. Built with [Eigen](https://libeigen.gitlab.io/).
+GLCM (Grey-Level Co-occurrence Matrix - Haralick) texture measures in Python. Built with [Eigen](https://libeigen.gitlab.io/).
 
 ## Install
 
