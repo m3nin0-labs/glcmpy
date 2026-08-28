@@ -108,4 +108,4 @@ We would like to thank the developers and contributors of the [`sits`](https://g
 
 ## License
 
-Code is licensed under the **GNU General Public License v3.0 or later** (GPL-3.0-or-later); see the [LICENSE](LICENSE) file. The texture math is ported from the [`sits`](https://github.com/e-sensing/sits) R package.
+Code is licensed under the **GNU General Public License v2.0**. See the [LICENSE](LICENSE) file. The texture math is ported from the [`sits`](https://github.com/e-sensing/sits) R package.
